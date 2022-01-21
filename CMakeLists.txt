@@ -9,5 +9,9 @@ set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules" ${CMAKE_MODULE_PATH})
 find_package(SFML 2.5.1 REQUIRED COMPONENTS system window graphics network audio)
 find_package(Protobuf 3.19 REQUIRED)
 
+include_directories(logger)
+
+add_library(logger logger/logger.h logger/logger.cpp)
+
 
 add_subdirectory(server)
