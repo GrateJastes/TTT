@@ -13,7 +13,7 @@ public:
 private:
     unsigned short port;
     sf::TcpListener listener;
-    std::vector<Session> sessions;
+    std::vector<std::shared_ptr<Session>> sessions;
 
     void accept_new_user();
 };

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+message p_UserMessage {
+  oneof Message {
+    p_InitMessage init_message = 1;
+  }
+}
+
+message p_InitMessage {
+  enum Action {
+    CREATE_LOBBY = 0;
+    JOIN_LOBBY = 1;
+  }
+
+  p_InitMessage.Action action = 1;
+  string username = 2;
+  uint32 session_id = 3;
+}
